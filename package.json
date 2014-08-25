@@ -7,8 +7,8 @@
     "jshint": "npm run jshint-src && npm run jshint-test",
     "jshint-src": "jshint --config .jshintrc src",
     "jshint-test": "jshint --config ./test/.jshintrc test",
-    "mocha": "mocha -R spec --recursive ./test/",
-    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "mocha": "mocha -R spec ./test/**/*.tests.js",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/**/*.tests.js",
     "check-cov": "istanbul check-coverage --statements 100 --functions 100 --branches 100 --lines 100",
     "report": "istanbul report cobertura",
     "test": "npm run jshint && npm run cover && npm run report && npm run check-cov || node scripts/tests-failed"
@@ -38,6 +38,7 @@
     "jshint": "^2.5.4",
     "mocha": "^1.21.4",
     "open": "0.0.5",
+    "proxyquire": "^1.0.1",
     "sinon": "^1.10.3",
     "sinon-chai": "^2.5.0"
   },

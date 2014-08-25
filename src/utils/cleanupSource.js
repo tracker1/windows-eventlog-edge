@@ -6,13 +6,15 @@ function cleanupSource(options) {
     return;
   }
 
+  //the source wasn't specified, force the log to use "Application" log.
+  options.log = "Application";
+
   if (module && module.parent && module.parent.id !== 'repl') {
     options.source = module.parent.filename;
     return;
   }
 
   //not specified, and no parent that isn't the interactive repl
-  options.log = "Application";
   options.source = "node.exe";
 }
 
