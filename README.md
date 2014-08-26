@@ -39,7 +39,7 @@ var logger = EventLog.Application('my-application');
 //  logger.TYPE(message, [params...], [callback])
 logger.info('message');
 logger.warn('message %s', new Date());
-logger.error('message');
+logger.error(new Error('this will serialize with name, message and stack'));
 logger.success('message', function(err){
 	if (err) console.error(err);
 });
