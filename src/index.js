@@ -1,11 +1,11 @@
 'use strict';
 
-var genLogBoundWriter = require('./utils/genLogBoundWriter');
+var genBoundWriters = require('./utils/genBoundWriters');
 
 module.exports = {
-  Application: genLogBoundWriter.bind(null,"Application"),
-  Security: genLogBoundWriter.bind(null,"Security"),
-  Setup: genLogBoundWriter.bind(null,"Setup"),
-  System: genLogBoundWriter.bind(null,"System"),
-  ForwardedEvents: genLogBoundWriter.bind(null,"Forwarded Events")
+  Application: genBoundWriters.bind(null,"Application"),
+  Security: genBoundWriters.bind(null,"Security"),
+  Setup: genBoundWriters.bind(null,"Setup"),
+  System: genBoundWriters.bind(null,"System"),
+  ForwardedEvents: genBoundWriters.bind(null,"Forwarded Events")
 };
