@@ -9,7 +9,7 @@ var expect = chai.expect;
 chai.use(require('sinon-chai'));
 
 describe('windows-eventlog-edge/index', function(){
-  var sut, stubs, genBoundWriters;
+  var sut, stubs, genBoundWriters, writeLog;
 
   beforeEach(function(){
     stubs = {
@@ -20,6 +20,8 @@ describe('windows-eventlog-edge/index', function(){
         ForwardedEvents: {}
     };
 
+    writeLog = sinon.stub();
+
     genBoundWriters = sinon.stub();
     genBoundWriters.withArgs('Application').returns(stubs.Application);
     genBoundWriters.withArgs('Security').returns(stubs.Security);
@@ -28,9 +30,16 @@ describe('windows-eventlog-edge/index', function(){
     genBoundWriters.withArgs('Forwarded Events').returns(stubs.ForwardedEvents);
 
     sut = pr('../src/index', {
+      './write-log': writeLog,
       './utils/genBoundWriters': genBoundWriters
     });
 
+  });
+
+  it('is a functino that will passthrough to write-log', function(){
+    var cb = function(){};
+    sut('test1',cb);
+    expect(writeLog).to.be.calledWithExactly('test1',cb);
   });
 
   it('will call the expected methods', function(){

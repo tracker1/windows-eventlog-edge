@@ -1,6 +1,6 @@
 {
   "name": "windows-eventlog-edge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Module to write to a Windows Event Log (Requires .Net)",
   "main": "src/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec \"./test/**/*.tests.js\"",
     "check-cov": "istanbul check-coverage --statements 100 --functions 100 --branches 100 --lines 100",
     "report": "istanbul report cobertura",
-    "test": "npm run jshint && npm run cover && npm run report && npm run check-cov || node scripts/tests-failed"
+    "test": "npm run jshint && npm run cover && npm run report && (npm run check-cov || node scripts/tests-failed)"
   },
   "repository": {
     "type": "git",
