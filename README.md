@@ -1,18 +1,5 @@
 # windows-eventlog-edge
 
-
-## WORK IN PROGRESS - DO NOT USE
-## WORK IN PROGRESS - DO NOT USE
-## WORK IN PROGRESS - DO NOT USE
-
-This is a work in progress, I've only got some very basic functionality.. the details below are the interface I intend to provide.
-
-## WORK IN PROGRESS - DO NOT USE
-## WORK IN PROGRESS - DO NOT USE
-## WORK IN PROGRESS - DO NOT USE
-
------
-
 Node module for writing to the Windows EventLog.  This module uses Edge.js and requires .Net
 
 Some of the naming conventions are intentionally `PascalCase` to match up against the .Net conventions, when you create a logger, you'll get to more familiar javascript-style `camelCase` syntax.
