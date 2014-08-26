@@ -1,6 +1,7 @@
 var path = require('path');
 var open = require('open');
 var cursor = require('ansi')(process.stdout);
+var fs = require('fs');
 
 cursor.write('\n\n\n')
   .brightRed().write('!!!!!')
@@ -8,4 +9,5 @@ cursor.write('\n\n\n')
   .brightRed().write('!!!!!\n\n')
   .fg.reset();
 
-open(path.resolve(__dirname,'../coverage/lcov-report/index.html'));
+var report = path.resolve(__dirname,'../coverage/lcov-report/index.html');
+if (fs.existsSync(report)) open(report);

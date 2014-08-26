@@ -1,6 +1,6 @@
 'use strict';
 
-function cleanupSource(options) {
+function cleanupSource(parent, options) {
   if (options.source) {
     options.source = options.source.toString();
     return;
@@ -9,8 +9,8 @@ function cleanupSource(options) {
   //the source wasn't specified, force the log to use "Application" log.
   options.log = "Application";
 
-  if (module && module.parent && module.parent.id !== 'repl') {
-    options.source = module.parent.filename;
+  if (parent && parent.id !== 'repl') {
+    options.source = parent.filename;
     return;
   }
 

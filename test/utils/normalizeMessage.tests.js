@@ -42,7 +42,7 @@ describe('normalizeMessage', function(){
       expect(output).to.have.a.property('message',input.message);
       expect(output).to.have.a.property('stack',input.stack);
     });
-  })
+  });
 
   describe('when the input is another value', function(){
     it('will return the string when a string', function(){

@@ -8,7 +8,7 @@ var normalizeMessage = require('./normalizeMessage');
 
 function cleanupOptions(options) {
   var ret = clone(options);
-  cleanupSource(ret);
+  cleanupSource(module.main, ret);
   ret.log = normalizeLog(ret.log);
   ret.type = normalizeType(ret.type);
   ret.message = normalizeMessage(ret.message);

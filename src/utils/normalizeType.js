@@ -13,4 +13,4 @@ module.exports = function normalizeLog(logEntryType) {
     default: // i
       return "Information";
   }
-}
+};

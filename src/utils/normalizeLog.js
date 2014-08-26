@@ -1,19 +1,20 @@
 'use strict';
 
 module.exports = function normalizeLog(log) {
-  switch ((log || '').toString().substr(0,3).toLowerCase()) {
+  log = (log || '').toString().substr(0,3).toLowerCase();
+  switch (log) {
     case 'sec': 
-      return "Security";
+      return 'Security';
     case 'set': 
-      return "Setup";
+      return 'Setup';
     case 'sys': 
-      return "System";
+      return 'System';
     case 'for': 
-      return "Forwarded Events";
+      return 'Forwarded Events';
     //case 'app': 
-    //  return "Application";
+    //  return 'Application';
   }
 
-  //default to "Application"
-  return "Application";
-}
+  //default to 'Application'
+  return 'Application';
+};

@@ -37,7 +37,7 @@ describe('cleanupOptions', function(){
     var opts = {log:'log',type:'type',message:'message'};
     sut(opts);
     clone.should.have.been.calledWithExactly(opts);
-    cleanupSource.should.have.been.calledWithExactly(opts);
+    cleanupSource.should.have.been.calledWithExactly(module.main, opts);
     normalizeLog.should.have.been.calledWithExactly(opts.log);
     normalizeType.should.have.been.calledWithExactly(opts.type);
     normalizeMessage.should.have.been.calledWithExactly(opts.message);
