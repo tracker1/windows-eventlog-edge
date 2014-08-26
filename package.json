@@ -1,6 +1,6 @@
 {
   "name": "windows-eventlog-edge",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Module to write to a Windows Event Log (Requires .Net)",
   "main": "src/index.js",
   "scripts": {
